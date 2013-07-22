@@ -33,7 +33,7 @@ class GCMDevice(Device):
 	# can make it turn out to be null and such:
 	# http://android-developers.blogspot.co.uk/2011/03/identifying-app-installations.html
 	device_id = UUIDField(verbose_name=_("Device ID"), blank=True, null=True, help_text="ANDROID_ID / TelephonyManager.getDeviceId()")
-	registration_id = models.TextField(verbose_name=_("Registration ID"), max_length=255,unique=True)
+	registration_id = models.CharField(verbose_name=_("Registration ID"), max_length=255,unique=True)
 
 	objects = GCMDeviceManager()
 
